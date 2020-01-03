@@ -1,0 +1,67 @@
+<!-- <!DOCTYPE html>
+    <html>
+        <head>
+            <title>스타일 조작</title>
+            <meta charset="utf-8">
+            <script>
+            window.onload = function(){
+                var output = '';
+
+                for(var i=0; i<256;i++){
+                    output +='<div></div>'; // body <div>가 256개 생성
+                }
+                document.body.innerHTML = output;
+
+                var divs= document.querySelectorAll('div');
+                for (var i =0; i<divs.length;i++){
+                    var div = divs[i];
+
+                    div.style.height = '2px';
+                    //배경 색이 점점 어두워짐
+                    //div.style.backgroundColor = `rgb(${i},${i},${i})`;
+                    //div.style.backgroundColor = `rgb(${i},${i*i%256},${(i+100)%256})`;
+                    div.style.backgroundColor = `rgb(${i},${i*i%256},${i*i%256})`;
+                }
+            };
+            </script>
+        </head>
+        <body>
+
+        </body>
+    </html> -->
+
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>스타일 조작</title>
+            <meta charset="utf-8">
+            <script>
+            window.onload = function(){
+                var output = '';
+
+                for(var i=0; i<256;i++){
+                    output +='<div></div>'; // body <div>가 256개 생성
+                }
+                document.body.innerHTML = output;
+
+                var divs= document.querySelectorAll('div');
+                var r,g,b;
+                divs.forEach(function(div,i){
+                    div.style.height = '2px';
+                    r=Math.floor(Math.random()*256);
+                    g=Math.floor(Math.random()*256);
+                    b=Math.floor(Math.random()*256);
+                    div.style.backgroundColor = `rgb(${r},${g},${b})`;
+
+                });
+                    
+                    //div.style.backgroundColor = `rgb(${i},${i*i%256},${i*i%256})`;
+
+            };
+            </script>
+        </head>
+        <body>
+
+        </body>
+    </html>
